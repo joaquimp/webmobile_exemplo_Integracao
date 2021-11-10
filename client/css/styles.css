@@ -1,0 +1,74 @@
+/*  Variáveis  */
+:root {
+  --bg1: #A9B0BB;
+  --bg2: #F8F8F9;
+  --corDestaque: #6582A5;
+  --corAcao: #DCAD42;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&family=Roboto&display=swap');
+
+/* Reset */
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos básicos */
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg1)
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+#lista {
+  margin-top: 20px;
+  background-color: var(--bg2);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 30px 40px 40px 40px;
+}
+
+.botao {
+  max-width: 20px;
+  max-height: 20px;
+  width: auto;
+  height: auto;
+}
+
+.tarefa {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.nova-tarefa {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-top: 20px;
+}
+
+.nova-tarefa input[type="text"] {
+  border: 1px solid var(--bg1);
+  background-color: var(--bg2);
+  width: 100%;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: var(--bg2);
+  outline: none;
+}
+

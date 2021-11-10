@@ -5,7 +5,7 @@ export type TarefaDocument = Tarefa & Document;
 
 @Schema()
 export class Tarefa {
-  @Prop({ required: true })
+  @Prop()
   titulo: string;
 
   @Prop()
