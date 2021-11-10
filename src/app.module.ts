@@ -4,7 +4,7 @@ import { TarefasModule } from './tarefas/tarefas.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
-const mongodb =
+const mongodb = process.env.MONGODB ||
   'mongodb+srv://joaquim:jocafilho@cluster0.nyase.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 @Module({
