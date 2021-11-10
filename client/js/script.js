@@ -7,6 +7,13 @@ window.onload = function() {
   buscarTarefas();
 }
 
+// usar a linha a seguir e comentar a próxima se for rodar
+// o codigo do front localmente e acessando a API remoto
+// do professor
+// const BASE_URL = 'https://webmovibile.herokuapp.com/api/tarefas/';
+const BASE_URL = '/api/tarefas/'
+
+
 ////////////////////////////////
 // Funcao que cria o HTML com
 // base nos dados passados,
@@ -54,10 +61,9 @@ function criarTarefa() {
   const dados = {
     titulo: titulo
   };
-  let url = '/api/tarefas/';
 
   var xhr = new XMLHttpRequest(); 
-  xhr.open('POST', url, true); 
+  xhr.open('POST', BASE_URL, true); 
   xhr.responseType = 'json'; 
 
   // Como estamos enviando dados no formato JSON eh preciso informar
@@ -86,7 +92,7 @@ function criarTarefa() {
 ////////////////////////////////
 function buscarTarefas() {
   var xhr = new XMLHttpRequest(); 
-  xhr.open('GET', '/api/tarefas', true); 
+  xhr.open('GET', BASE_URL, true); 
   xhr.responseType = 'json'; 
   xhr.onload = function () {
     if (xhr.status === 200) { 
@@ -108,7 +114,7 @@ function mudarTarefa(id, novoValor) {
   const dados = {
     executada: novoValor
   };
-  let url = '/api/tarefas/' + id;
+  const url = BASE_URL + id;
 
   var xhr = new XMLHttpRequest(); 
   xhr.open('PATCH', url, true); 
@@ -145,7 +151,7 @@ function editarTituloTarefa(id) {
   const dados = {
     titulo: titulo
   };
-  let url = '/api/tarefas/' + id;
+  const url = BASE_URL + id;
 
   var xhr = new XMLHttpRequest(); 
   xhr.open('PATCH', url, true); 
@@ -177,7 +183,7 @@ function apagarTarefa(id, titulo) {
   if(!window.confirm(`Deseja realmente apagar a tarefa "${titulo}"?`)) {
     return;
   }
-  let url = '/api/tarefas/' + id;
+  const url = BASE_URL + id;
 
   var xhr = new XMLHttpRequest(); 
   xhr.open('DELETE', url, true); 
